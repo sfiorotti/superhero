@@ -1,0 +1,48 @@
+{
+  "name": "superhero",
+  "version": "1.0.0",
+  "description": "Super Hero Catalogue REST api",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfiorotti/superhero.git"
+  },
+  "keywords": [
+    "superhero"
+  ],
+  "author": "Sergio Fiorotti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sfiorotti/superhero/issues"
+  },
+  "homepage": "https://github.com/sfiorotti/superhero#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "chalk": "^2.1.0",
+    "compressible": "^2.0.11",
+    "glob": "^7.1.2",
+    "http": "0.0.0",
+    "jsonwebtoken": "^8.0.1",
+    "koa": "^2.3.0",
+    "koa-body": "^2.5.0",
+    "koa-compress": "^2.0.0",
+    "koa-convert": "^1.2.0",
+    "koa-cors": "0.0.16",
+    "koa-cors-error": "0.0.2",
+    "koa-helmet": "^3.2.0",
+    "koa-jwt": "^3.2.2",
+    "koa-logger": "^3.1.0",
+    "koa-router": "^7.2.1",
+    "mongoose": "^4.11.14"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3",
+    "nodemon": "^1.12.1",
+    "supertest": "^3.0.0"
+  }
+}
