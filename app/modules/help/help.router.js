@@ -11,7 +11,7 @@ const createRoutes = (jwt) => {
 
     /* 17. [BONUS] Help Me endpoint: send a location (latitude and longitude) 
     and find up to 8 closest superheroes (in a 10km radius) */
-    router.post('/', jwt, async (ctx, next) => controller.help(ctx, next))
+    router.post('/', jwt, controller.help)
     
     return router
 }

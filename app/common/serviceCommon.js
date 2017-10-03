@@ -7,6 +7,9 @@ let serviceCommon = function(model) {
         const skip = ((paginate * limit) - limit) 
         return await _model.find(params, {}, { skip , limit })
     }
+    const findAll = async (params) => {
+        return await _model.find(params)
+    }
     const findById = async (id) => {
         return await _model.findById({ _id: id })
     }
@@ -26,6 +29,7 @@ let serviceCommon = function(model) {
     
     return { 
         find,
+        findAll,
         findById,
         findOne,
         save,

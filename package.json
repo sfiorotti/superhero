@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/sfiorotti/superhero#readme",
   "dependencies": {
+    "acl": "^0.4.11",
     "bcryptjs": "^2.4.3",
     "chalk": "^2.1.0",
     "compressible": "^2.0.11",

@@ -3,8 +3,11 @@ const body = require('koa-body')
 const fs = require('fs')
 const helmet = require('koa-helmet')
 const http = require('http')
-const logger = require('./app/helpers/logger')
 const loggerKoa = require('koa-logger')
+
+// helpers
+const acl = require('./app/helpers/acl')
+const logger = require('./app/helpers/logger')
 
 // config
 const port = require('./app/config/api').port
@@ -14,8 +17,7 @@ const jwt = require('./app/middlewares/jwt')
 const compress = require('./app/middlewares/compress')
 const cors = require('./app/middlewares/cors')
 
-// models and routes
-const models = require('./app/models')
+// routes
 const routes = require('./app/routes')
 
 // start koa
@@ -30,8 +32,8 @@ app.use(cors.corsError)
 app.use(cors.cors)
 app.use(compress)
 
-// start models and routes
-models.init()
+// start acl and routes
+acl.init()
 routes(app, jwt)
 
 // start api

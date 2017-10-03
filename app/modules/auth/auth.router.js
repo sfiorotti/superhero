@@ -10,7 +10,7 @@ const createRoutes = (jwt) => {
     router.prefix(`/${prefix}/${baseUrl}`)
 
     // 15. Authenticate to the api
-    router.post('/', async (ctx, next) => controller.token(ctx, next))    
+    router.post('/', controller.token)
     
     return router
 }

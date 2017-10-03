@@ -7,12 +7,13 @@ const instance = require('./instance')
 const mongoose = instance.mongoose
 
 let models = []
-const init = async () => {
+const init = () => {
     let files = glob.sync(`${modelsPath}/**/*.model.js`, { dot: true })
-    await files.forEach(function(model) {
+    files.forEach((model) => {
         const fileName = modelName(model)
         models[fileName] = (require(model)(mongoose))
     })
+    return
 }
 
 const modelName = (model) => {
