@@ -1,3 +1,10 @@
+/**
+ * @fileOverview ControllerCommon is a module to be reused to create simplified dynamic controller to
+ * call a ServiceCommon
+ *
+ * @exports object
+ * @version 0.0.1
+ */
 let controllerCommon = function(model) {
     let _service = new (require('./serviceCommon'))(model)
 

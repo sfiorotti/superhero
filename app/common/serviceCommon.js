@@ -1,3 +1,10 @@
+/**
+ * @fileOverview ServiceCommon is a module to be reused to create simplified dynamic functions to 
+ * create, update, remove and find with dynamic Schemas in MongoDB
+ *
+ * @exports object
+ * @version 0.0.1
+ */
 let serviceCommon = function(model) {
     let _model = model
 

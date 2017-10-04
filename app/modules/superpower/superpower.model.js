@@ -2,7 +2,8 @@ module.exports = (mongoose) => {
     const Schema = mongoose.Schema
     const SuperPowerSchema = new Schema({
         name: {
-            type: String
+            type: String,
+            unique: true
         },
         description: {
             type: String

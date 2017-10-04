@@ -1,3 +1,11 @@
+/**
+ * @fileOverview Instance is a module to be reused to get a mongo instance, global promise 
+ * and connection
+ *
+ * @exports object
+ * @version 0.0.1
+ */
+
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise;
 
