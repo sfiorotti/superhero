@@ -33,7 +33,7 @@ npm test
 ```
 
 Generate Code Coverage Report
-````
+```
 npm run coverage
 ```
 ** Note: After execute command, open report in /coverage/lcov-report/index.html **
