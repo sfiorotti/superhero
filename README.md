@@ -40,7 +40,7 @@ npm run coverage
 
 
 Generate Doc's
-````
+```
 npm run docs
 ```
 ** Note: After execute command, open report in /docs/index.html **
