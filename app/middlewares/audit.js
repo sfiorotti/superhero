@@ -15,6 +15,7 @@ const auditing = async (username, permission) => {
         entityId: permissions.indexOf(permission) + 1
     }
     await service.save(audit)
+    return audit
 }
 
 module.exports = {

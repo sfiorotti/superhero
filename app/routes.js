@@ -25,9 +25,7 @@ const createRoutes = async (app, jwt) => {
     await files.forEach((file) => {
         const route = require(file)(jwt)
         app.use(route.routes())
-           .use(route.allowedMethods({
-                throw: true
-           }))
+           .use(route.allowedMethods())
     })
 }
 

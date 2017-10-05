@@ -1,5 +1,6 @@
 const acl = require('../helpers/acl').acl
 const audit = require('./audit')
+const subscribe = require('../modules/subscribe/subscribe.service')
 
 const hasPermission = async (ctx, next, permission) => {
 	const user = ctx.state.user
@@ -9,8 +10,10 @@ const hasPermission = async (ctx, next, permission) => {
         ctx.status = 403
         return
     }
-    await audit.auditing(user.data.username, permission)
     await next()
+
+    let data = await audit.auditing(user.data.username, permission)
+    await subscribe.send(data)
 }
 
 const superHeroList = async (ctx, next) => hasPermission(ctx, next, 'superhero_list')
@@ -27,7 +30,7 @@ const userList = async (ctx, next) => hasPermission(ctx, next, 'user_list')
 const userCreate = async (ctx, next) => hasPermission(ctx, next, 'user_create')
 const userUpdate = async (ctx, next) => hasPermission(ctx, next, 'user_update')
 const userDelete = async (ctx, next) => hasPermission(ctx, next, 'user_delete')
-const subscribe = async (ctx, next) => hasPermission(ctx, next, 'subscribe')
+// const subscribe = async (ctx, next) => hasPermission(ctx, next, 'subscribe')
 const helpMe = async (ctx, next) => hasPermission(ctx, next, 'helpme')
 
 module.exports = {
@@ -45,6 +48,6 @@ module.exports = {
     userCreate,
     userUpdate,
     userDelete,
-    subscribe,
+    // subscribe,
     helpMe
 }

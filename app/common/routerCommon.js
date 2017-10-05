@@ -5,11 +5,11 @@
  * @version 0.0.1
  */
 let routerCommon = function(controller, router, jwt) {
-    router.del(`/:id`, jwt, async (ctx, next) => controller.remove(ctx, next))
-    router.get(`/:id`, jwt, async (ctx, next) => controller.findById(ctx, next))
-    router.patch(`/:id`, jwt, async (ctx, next) => controller.update(ctx, next))
-    router.post(`/paginate/:limit`, jwt, async (ctx, next) => controller.find(ctx, next))
-    router.post(`/creat`, jwt, async (ctx, next) => controller.save(ctx, next))
+    router.del(`/:id`, jwt, controller.remove)
+    router.get(`/:id`, jwt, controller.findById)
+    router.patch(`/:id`, jwt, controller.update)
+    router.post(`/paginate/:limit`, jwt, controller.find)
+    router.post(`/creat`, jwt, controller.save)
     return router
 }
 
