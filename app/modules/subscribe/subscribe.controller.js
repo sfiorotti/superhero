@@ -1,3 +1,10 @@
+/**
+ * @fileOverview Subscribe Controller is a responsible for the subscribe business rule
+ *
+ * 
+ * @exports object
+ * @version 0.0.1
+ */
 const sse = require('sse-broadcast')()
 
 const subscribe = async (ctx, next) => {

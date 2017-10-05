@@ -1,6 +1,13 @@
-const acl = require('../helpers/acl').acl
+/**
+ * @fileOverview ACL Middleware is a module responsible for verifying that the user who 
+ * is accessing the url has sufficient permission
+ *
+ * @exports object
+ * @version 0.0.1
+ */
+const acl = require('../acl').acl
 const audit = require('./audit')
-const subscribe = require('../modules/subscribe/subscribe.service')
+const subscribeService = require('../modules/subscribe/subscribe.service')
 
 const hasPermission = async (ctx, next, permission) => {
 	const user = ctx.state.user
@@ -13,7 +20,8 @@ const hasPermission = async (ctx, next, permission) => {
     await next()
 
     let data = await audit.auditing(user.data.username, permission)
-    await subscribe.send(data)
+    if (data)
+        await subscribeService.send(data)
 }
 
 const superHeroList = async (ctx, next) => hasPermission(ctx, next, 'superhero_list')
@@ -30,7 +38,7 @@ const userList = async (ctx, next) => hasPermission(ctx, next, 'user_list')
 const userCreate = async (ctx, next) => hasPermission(ctx, next, 'user_create')
 const userUpdate = async (ctx, next) => hasPermission(ctx, next, 'user_update')
 const userDelete = async (ctx, next) => hasPermission(ctx, next, 'user_delete')
-// const subscribe = async (ctx, next) => hasPermission(ctx, next, 'subscribe')
+const subscribe = async (ctx, next) => hasPermission(ctx, next, 'subscribe')
 const helpMe = async (ctx, next) => hasPermission(ctx, next, 'helpme')
 
 module.exports = {
@@ -48,6 +56,6 @@ module.exports = {
     userCreate,
     userUpdate,
     userDelete,
-    // subscribe,
+    subscribe,
     helpMe
 }

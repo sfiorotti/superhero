@@ -1,8 +1,9 @@
 const request = require('koa2-request')
+const api = require('../../config/api')
 
 const send = async (data) => {
     await request({
-        url: `http://localhost:3000/api/subscribe/send/`,
+        url: `${api.url}:${api.port.http}/${api.prefix}/subscribe/send/`,
         method: 'post',
         headers: {
             'content-type': 'application/json',

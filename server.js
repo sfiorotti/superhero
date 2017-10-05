@@ -6,7 +6,6 @@ const http = require('http')
 const loggerKoa = require('koa-logger')
 
 // helpers
-const acl = require('./app/helpers/acl')
 const logger = require('./app/helpers/logger')
 
 // config
@@ -17,7 +16,8 @@ const jwt = require('./app/middlewares/jwt')
 const compress = require('./app/middlewares/compress')
 const cors = require('./app/middlewares/cors')
 
-// routes
+// acl and routes
+const acl = require('./app/acl')
 const routes = require('./app/routes')
 
 // start koa

@@ -1,3 +1,10 @@
+/**
+ * @fileOverview Auth Controller is a responsible for the auth business rule
+ *
+ * 
+ * @exports object
+ * @version 0.0.1
+ */
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 

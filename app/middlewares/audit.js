@@ -1,4 +1,12 @@
-const acl = require('../helpers/acl')
+/**
+ * @fileOverview Audit Middleware is a module responsible for auditing 
+ * the changes that occur in the database
+ *
+ * 
+ * @exports object
+ * @version 0.0.1
+ */
+const acl = require('../acl')
 const service = require('../modules/audit/audit.service')
 
 const auditing = async (username, permission) => {

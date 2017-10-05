@@ -7,5 +7,6 @@ const findBySuperPower = async (superPower) => {
 
 module.exports = {
     findBySuperPower,
-    findAll: service.findAll
+    findAll: service.findAll,
+    save: service.save
 }

@@ -1,3 +1,10 @@
+/**
+ * @fileOverview Help Controller is a responsible for the help business rule
+ *
+ * 
+ * @exports object
+ * @version 0.0.1
+ */
 const geolib = require('geolib')
 const superHeroService = require('../superhero/superhero.service')
 
@@ -20,12 +27,10 @@ const help = async (ctx, next) => {
             help.push(superHero)
         }
     }
-    await next()
-
     ctx.body = help
     ctx.status = 200
 }
 
 module.exports =  {
-    help: help
+    help
 }

@@ -1,3 +1,10 @@
+/**
+ * @fileOverview SuperPower Controller is a responsible for the superpower model business rule
+ *
+ * 
+ * @exports object
+ * @version 0.0.1
+ */
 const superPower = require('../../models').models.superpower
 
 const factory = new (require('../../common/controllerCommon'))(superPower)

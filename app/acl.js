@@ -1,7 +1,15 @@
+/**
+ * @fileOverview ACL is a module responsible for creating the 
+ * profiles and permissions and associating them with users
+ *
+ * 
+ * @exports object
+ * @version 0.0.1
+ */
 const NodeACL = require('acl')
 const acl = new NodeACL(new NodeACL.memoryBackend())
 
-const models = require('../models')
+const models = require('./models')
 models.init()
 
 const userModel = models.models.user

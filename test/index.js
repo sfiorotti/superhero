@@ -8,10 +8,12 @@ const app = require('../server')
 const request = supertest.agent(app.listen())
 
 let user = { 
-    username: "sergiofiorotti",
+    username: "admin",
     password: "123"
 }
 
+require('./tests/auth')(mocha, request, expect, user)
 require('./tests/user')(mocha, request, expect, user)
 require('./tests/superhero')(mocha, request, expect, user)
 require('./tests/superpower')(mocha, request, expect, user)
+require('./tests/help')(mocha, request, expect, user)

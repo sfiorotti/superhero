@@ -21,16 +21,25 @@ Install dependencies
 npm install
 ```
 
+Start Seed to populate Users, SuperPowers and SuperHeroes in MongoDB
+```
+npm run seed
+```
+** Note : Please make sure your MongoDB is running before using ```npm run seed``` **
+
+
 Start a Local Server
 ```
 npm start
 ```
 ** Note : Please make sure your MongoDB is running before using ```npm start``` **
 
+
 Run Test
 ```
 npm test
 ```
+
 
 Generate Code Coverage Report
 ```
