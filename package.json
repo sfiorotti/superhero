@@ -43,7 +43,7 @@
     "koa-logger": "^3.1.0",
     "koa-router": "^7.2.1",
     "koa2-request": "^1.0.1",
-    "mongoose": "^4.11.14",
+    "mongoose": "^4.13.21",
     "sse-broadcast": "^0.4.1"
   },
   "devDependencies": {
